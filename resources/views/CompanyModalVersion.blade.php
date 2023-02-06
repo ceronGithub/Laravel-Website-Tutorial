@@ -33,7 +33,22 @@
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>        
-    </nav>    
+    </nav> 
+    @if (Session::has('success'))
+        <div class="alert alert-success" style="text-align: center;">
+            <span>{!! \Session::get('success') !!}</span>
+        </div>
+    @endif
+    @if (Session::has('warning'))
+        <div class="alert alert-warning" style="text-align: center;">
+            <span>{!! \Session::get('warning') !!}</span>
+        </div>
+    @endif
+    @if (Session::has('missing'))
+        <div class="alert alert-danger" style="text-align: center;">
+            <span>{!! \Session::get('missing') !!}</span>
+        </div>
+    @endif   
     <div style="padding-left: 200px; padding-right: 200px;">
         <table id="example" class="table table-striped table-bordered" style="width:100%;">
             <thead>
@@ -68,7 +83,10 @@
                                         style="border: none;">
                                         <ion-icon name="settings-outline"></ion-icon>
                             </a>                            
-                            <a href="#" class="btn btn-outline-danger" style="border: none;"><ion-icon name="trash-outline"></ion-icon></a>                                                        
+                            <a href="#" class="btn btn-outline-danger" 
+                                        onclick="deleteFunction({{ $companies->id }})" 
+                                        style="border: none;"><ion-icon name="trash-outline"></ion-icon>
+                            </a>                                                        
                             <a href="#" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
                         </td>
                     </tr>
@@ -89,6 +107,12 @@
         </table>
         {{ $company->links() }}
     </div>
+    {{-- Start Delete Modal --}}
+    <form id="deleteForm" action="{{ route('removeCompanyModalVer') }}" method="POST">                            
+        @csrf                            
+        <input type="hidden" name="ID" id="deleteID">
+    </form> 
+    {{-- End Delete Modal --}}
     {{-- Start Add Modal --}}
     <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -227,6 +251,13 @@
             }        
         </style>    
     <script>
+        //DELETE FUNCTION    
+        function deleteFunction(getID)
+        {
+            $('#deleteID').val(getID); 
+            event.preventDefault();                                                                                                                                                                                                      
+            document.getElementById('deleteForm').submit();
+        }    
         //EDIT MODAL
         $(".update_company").click(function() {
             var company_id = $(this).attr('data-edit-id');                      
