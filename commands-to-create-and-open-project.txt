@@ -1,0 +1,30 @@
+1ST :DL THE FOLLOWING
+wamp - https://www.wampserver.com/en/
+gitbash - https://git-scm.com/downloads
+mysql workbench - https://dev.mysql.com/downloads/installer/
+node.js - https://nodejs.org/en/
+visual code - https://code.visualstudio.com/
+
+2nd :install all
+
+3rd :follow 
+If using Xampp goto Xampp folder > htDocs > gibash there 
+> composer create-project laravel/laravel (project name)
+
+If using Wamp Goto Wamp folder > www > git bash there
+> composer create-project laravel/laravel (project name)
+
+If using Cmd search Cmd 
+> composer global require laravel/installer 
+> composer create-project --prefer-dist laravel/laravel:^7.0 (laravel project name)
+
+4th :close git bash, click the created project, git bash there
+
+5th :type -> composer install -> install all needed package of laravel
+
+6th :type -> code . -> your project will open in the visual code
+
+7th :look for new terminal, type -> php artisan serve > copy the link -> paste it to browser
+
+happy coding.
+

@@ -1,0 +1,3 @@
+open project 
+search: https://laravel.com/docs/7.x/authentication (look for #Authentication Quickstart, #Routing (type it on terminal the composer blah blah blah...))
+follow terminal instruction.

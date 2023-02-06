@@ -1,0 +1,55 @@
+goto to project, git bash there
+follow:
+this is for connecting git and project only(if git have no records of your project)
+type this command on terminal
+> git init 
+> git remote add origin (git hub url repository)
+
+======================================= uploading commands ======================================
+type this command on terminal
+> git add .
+> git status
+> git commit -m "name of the commit"
+> git status
+
+if git didnt ask for user credentials
+type this command on terminal
+> git push -u origin branch name // for new (git push -u origin master)
+
+if git ask for user credentials
+type this command on terminal
+> git config --global user.email "userGit Email"
+> git config --global user.name "userGit Username"
+then 
+> git push -u origin branch name // for new (git push -u origin master)
+
+Update
+theres two ways to update your repository
+1st way:
+> goto folder wamp(WWW folder)/ xampp(HTDOC folder) 
+> git bash there
+> git push -u origin branch name
+
+2nd way:
+on VisualCode, goto Source Control
+> enter the commit
+> click commit
+> read the procedure
+> your repo. will update automatically
+
+======================================= get project from git website ======================================
+> goto htdocs(Xampp) / www(Wamp) / desktop
+> git bash there 
+> git clone repoUrl
+> git pull origin branch name
+
+======================================= get project from git website ======================================
+> goto htdocs(Xampp) / www(Wamp) / desktop
+> goto project folder
+> git bash there 
+> git clone repoUrl
+> git pull origin branch name or git checkout branch name
+> composer install
+> code .
+======================================= add new branch and change active branch ======================================
+> git checkout -b develop (create new branch) / to change branch (git checkout (branch name))

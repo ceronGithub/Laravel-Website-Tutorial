@@ -1,0 +1,52 @@
+1ST :DL THE FOLLOWING
+wamp - https://www.wampserver.com/en/
+gitbash - https://git-scm.com/downloads
+mysql workbench - https://dev.mysql.com/downloads/installer/
+node.js - https://nodejs.org/en/
+visual code - https://code.visualstudio.com/
+
+2nd :install all
+
+3rd :follow 
+If using Xampp goto Xampp folder > htDocs > gibash there 
+> composer create-project laravel/laravel (project name)
+
+If using Wamp Goto Wamp folder > www > git bash there
+> composer create-project laravel/laravel (project name)
+
+If using Cmd search Cmd 
+> composer global require laravel/installer 
+> composer create-project --prefer-dist laravel/laravel:^7.0 (laravel project name)
+
+4th :close git bash, click the created project, git bash there
+
+5th :type -> composer install
+
+6th :code . -> your project will open in the visual code
+
+connect database to laravel
+7th :please follow
+goto App\providers\AppServiceProviders
+under:
+    public function boot()
+    {
+        //
+	Schema::defaultStringLength(191); //insert this
+    }
+.env:
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306 //change this
+DB_DATABASE=laravel //change this
+DB_USERNAME=root //change this, if you have account type in your account, if no acc. leave it be
+DB_PASSWORD= //change this, if you have account type in your account, if no acc. leave it be
+note: 
+please make sure your workbench table and DB_DATABASE should match.
+
+8th :terminal > new terminal > php artisan migrate:refresh --seed > php artisan generate
+
+//just incase you encounter errors
+9th :follow this https://laravel.com/docs/7.x/authentication (look for #Authentication Quickstart, #Routing (type it on terminal))
+10th :open browser > localhost\projectname\public\
+
+happy coding.
