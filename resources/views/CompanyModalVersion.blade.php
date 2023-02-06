@@ -82,11 +82,13 @@
                                         data-edit-id="{{ $companies->id }}"                                       
                                         style="border: none;">
                                         <ion-icon name="settings-outline"></ion-icon>
-                            </a>                            
-                            <a href="#" class="btn btn-outline-danger" 
-                                        onclick="deleteFunction({{ $companies->id }})" 
-                                        style="border: none;"><ion-icon name="trash-outline"></ion-icon>
-                            </a>                                                        
+                            </a> 
+                            @if (count($company) > 1)
+                                <a href="#" class="btn btn-outline-danger" 
+                                    onclick="deleteFunction({{ $companies->id }})" 
+                                    style="border: none;"><ion-icon name="trash-outline"></ion-icon>
+                                </a> 
+                            @endif                                                                  
                             <a href="#" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
                         </td>
                     </tr>
