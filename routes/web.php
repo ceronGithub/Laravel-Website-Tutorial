@@ -21,7 +21,11 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::get('/company', [App\Http\Controllers\CompanyViaModalController::class, 'index'])->name('companyModalVer');
-Route::post('/company/update', [App\Http\Controllers\CompanyViaModalController::class, 'update'])->name('updateCompanyModalVer');
-Route::post('/company/store', [App\Http\Controllers\CompanyViaModalController::class, 'addNewCompany'])->name('addNewCompanyModalVer');
-Route::post('/company/delete', [App\Http\Controllers\CompanyViaModalController::class, 'deleteRecord'])->name('removeCompanyModalVer');
+//modal
+Route::get('/CompanyModalVersion', [App\Http\Controllers\CompanyViaModalController::class, 'index'])->name('companyModalVer');
+Route::post('/CompanyModalVersion/update', [App\Http\Controllers\CompanyViaModalController::class, 'update'])->name('updateCompanyModalVer');
+Route::post('/CompanyModalVersion/store', [App\Http\Controllers\CompanyViaModalController::class, 'addNewCompany'])->name('addNewCompanyModalVer');
+Route::post('/CompanyModalVersion/delete', [App\Http\Controllers\CompanyViaModalController::class, 'deleteRecord'])->name('removeCompanyModalVer');
+//next page
+Route::get('/CompanyNextPageVersion', [App\Http\Controllers\CompanyViaNextPageController::class, 'index'])->name('companyNextPageVer');
+Route::get('/CompanyNextPageVersion/{id}', [App\Http\Controllers\CompanyViaNextPageController::class, 'show'])->name('viewNextPageVer');

@@ -24,7 +24,8 @@ class CompanyViaModalController extends Controller
      */
     public function index()
     {
-        $company = Company::paginate(5);
+        //$company = Company::paginate(5);
+        $company = Company::all();
         return view('CompanyModalVersion', compact('company'));
     } 
     //remove record
@@ -59,8 +60,6 @@ class CompanyViaModalController extends Controller
         $updateID->history = $request->input('updateHistory');
         //save changes
         $updateID->save();
-        //get company data
-        $company = Company::paginate(5);
         //display return
         //return view('companyModalVer', compact('company'));        
         return redirect()->route('companyModalVer');

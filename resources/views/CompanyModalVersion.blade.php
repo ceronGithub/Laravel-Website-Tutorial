@@ -107,7 +107,7 @@
             </tfoot>         
             --}}
         </table>
-        {{ $company->links() }}
+        {{--{{ $company->links() }}--}}        
     </div>
     {{-- Start Delete Modal --}}
     <form id="deleteForm" action="{{ route('removeCompanyModalVer') }}" method="POST">                            
