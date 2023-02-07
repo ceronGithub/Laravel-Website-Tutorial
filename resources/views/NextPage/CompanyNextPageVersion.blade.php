@@ -23,10 +23,7 @@
                  {{ __('Logout') }}
              </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item"                                         
-                        data-toggle="modal" 
-                        data-target="#addModal">Add Company
-                        <ion-icon name="add-circle-outline"></ion-icon>
+            <a href="{{ route('addNextPageVer') }}" class="dropdown-item">Add Company<ion-icon name="add-circle-outline"></ion-icon>
             </a>
             </div>
         </div>  
