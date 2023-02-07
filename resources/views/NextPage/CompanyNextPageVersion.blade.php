@@ -70,7 +70,7 @@
                                         style="border: none;">
                                         <ion-icon name="eye-outline"></ion-icon>
                             </a>
-                            <a href="#" class="btn btn-outline-primary update_company"                                        
+                            <a href="{{ route('editNextPageVer', $companies->id) }}" class="btn btn-outline-primary update_company"                                        
                                         style="border: none;">
                                         <ion-icon name="settings-outline"></ion-icon>
                             </a> 
