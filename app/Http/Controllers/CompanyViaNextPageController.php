@@ -51,7 +51,7 @@ class CompanyViaNextPageController extends Controller
             return view('NextPage.UpdateNextPageVersion', compact('company'));
         }     
     }    
-    //showUpdatepage
+    //Update page
     public function updatePage($id)
     {                   
         $company = Company::where(['id' => $id])->first();        
@@ -76,4 +76,20 @@ class CompanyViaNextPageController extends Controller
             return view('NextPage.UpdateNextPageVersion', compact('company'));
         }     
     }
+    //delete page
+    public function deletePage($id)
+    {                   
+        $company = Company::where(['id' => $id])->first();        
+        return view('NextPage.DeleteNextPageVersion', compact('company'));
+    }
+    //delete record
+    public function delete($id)
+    {        
+        //delete record
+        $company = Company::where(['id' => $id])->delete(); 
+        //call all company data
+        $company = Company::all();
+        //display return
+        return view('NextPage.CompanyNextPageVersion', compact('company'));
+    }    
 }

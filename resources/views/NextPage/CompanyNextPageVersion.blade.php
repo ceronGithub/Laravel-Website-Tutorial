@@ -72,7 +72,7 @@
                                         <ion-icon name="settings-outline"></ion-icon>
                             </a> 
                             @if (count($company) > 1)
-                                <a href="#" class="btn btn-outline-danger" 
+                                <a href="{{ route('deleteNextPageVer', $companies->id) }}" class="btn btn-outline-danger" 
                                     style="border: none;"><ion-icon name="trash-outline"></ion-icon>
                                 </a> 
                             @endif                                                                  
