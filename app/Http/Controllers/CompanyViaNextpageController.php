@@ -113,4 +113,35 @@ class CompanyViaNextpageController extends Controller
         }        
     }      
     //-----update end
+
+    //-----delete start
+    public function deletePage($companyID)  
+    {
+        //check if company is existing, and if existing get data
+        $companyDetials = Company::where('id', $companyID)->first();
+        //display return 
+        return view('nextpage/delete', compact('companyDetials'));
+    } 
+    public function delete(Request $request)  
+    {            
+        try
+        {
+            //delete record from Database
+            $updateID = Company::where('id', $request->input('companyID'))->delete();
+            //flash message
+            Session::flash('success', "Record deletion successful.");            
+            //get company data
+            $company = Company::paginate();
+            //calling rss/views
+            return redirect()->route('companyNextPageVer')->with(compact('company'));
+        }
+        catch(Throwable $e)
+        {
+            //flash message
+            Session::flash('missing', "Please Try Again");            
+            //calling rss/views            
+            return redirect()->route('companyNextPageVer')->with(compact('company'));
+        }        
+    }        
+    //-----delete end
 }

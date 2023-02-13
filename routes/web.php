@@ -27,11 +27,18 @@ Route::post('/companyViaModal/store', [App\Http\Controllers\CompanyViaModalContr
 
 //via next page
 Route::get('/companyViaNextPage', [App\Http\Controllers\CompanyViaNextpageController::class, 'index'])->name('companyNextPageVer');
-//add page
+//----------- add start
 Route::get('/companyViaNextPage/NewRecordPage', [App\Http\Controllers\CompanyViaNextpageController::class, 'addPage'])->name('companyNextPageAddVer');
 Route::get('/companyViaNextPage/storeFunc', [App\Http\Controllers\CompanyViaNextpageController::class, 'store'])->name('companyNextPageAddFuncVer');
-//view page
+//----------- add end
+//----------- view start
 Route::get('/companyViaNextPage/ViewCompanyDetails/{id}', [App\Http\Controllers\CompanyViaNextpageController::class, 'view'])->name('companyNextPageViewVer');
-//update
+//----------- view end
+//----------- edit start
 Route::get('/companyViaNextPage/EditPage/{id}', [App\Http\Controllers\CompanyViaNextpageController::class, 'editPage'])->name('companyNextPageEditVer');
 Route::get('/companyViaNextPage/editFunc', [App\Http\Controllers\CompanyViaNextpageController::class, 'edit'])->name('companyNextPageEditFuncVer');
+//----------- edit end
+//----------- delete start
+Route::get('/companyViaNextPage/DeletePage/{id}', [App\Http\Controllers\CompanyViaNextpageController::class, 'deletePage'])->name('companyNextPageDeleteVer');
+Route::get('/companyViaNextPage/deleteFunc', [App\Http\Controllers\CompanyViaNextpageController::class, 'delete'])->name('companyNextPageDeleteFuncVer');
+//----------- delete end
