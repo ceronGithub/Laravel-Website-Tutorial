@@ -25,6 +25,13 @@ class CompanyViaNextpageController extends Controller
     {        
         $company = Company::paginate(5);
         //calling rss/views
-        return view('CompanyNextPageVersion', compact('company'));
-    }     
+        return view('nextpage.CompanyNextPageVersion', compact('company'));
+    }   
+    public function view($companyID)  
+    {
+        //check if company is existing, and if existing get data
+        $companyDetials = Company::where('id', $companyID)->first();
+        //display return 
+        return view('nextpage/view', compact('companyDetials'));
+    }
 }

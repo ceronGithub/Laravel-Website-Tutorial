@@ -6,8 +6,7 @@
     {{-- Bootstrap --}}
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     {{-- DataTables --}}
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css"/>
-    
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.2/css/jquery.dataTables.min.css"/>    
     {{-- Style --}}
     <style>
     tfoot input {
@@ -56,7 +55,7 @@
                         <td>{{ $companies->product }}</td>
                         <td>{{ $companies->country }}</td>
                         <td>
-                            <a href="#" class="btn btn-outline-info" style="border: none;"><ion-icon name="eye-outline"></ion-icon></a>
+                            <a href="{{ route('companyNextPageViewVer',$companies->id) }}" class="btn btn-outline-info" style="border: none;"><ion-icon name="eye-outline"></ion-icon></a>
                             <a href="#" class="btn btn-outline-primary" style="border: none;"><ion-icon name="settings-outline"></ion-icon></a>                            
                             <a href="#" class="btn btn-outline-danger" style="border: none;"><ion-icon name="trash-outline"></ion-icon></a>                                                        
                             <a href="#" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
