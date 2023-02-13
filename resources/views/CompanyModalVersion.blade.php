@@ -35,6 +35,21 @@
         </form>        
     </nav>    
     <div style="padding-left: 200px; padding-right: 200px;">
+        @if (Session::has('success'))
+            <div class="alert alert-success">
+                <span>{!! \Session::get('success') !!}</span>
+            </div>
+        @endif
+        @if (Session::has('warning'))
+            <div class="alert alert-warning">
+                <span>{!! \Session::get('warning') !!}</span>
+            </div>
+        @endif
+        @if (Session::has('missing'))
+            <div class="alert alert-danger">
+                <span>{!! \Session::get('missing') !!}</span>
+            </div>
+        @endif        
         <table id="example" class="table table-striped table-bordered" style="width:100%;">
             <thead>
                 <tr>
@@ -68,7 +83,16 @@
                                         style="border: none;">
                                         <ion-icon name="settings-outline"></ion-icon>
                             </a>                            
-                            <a href="#" class="btn btn-outline-danger" style="border: none;"><ion-icon name="trash-outline"></ion-icon></a>                                                        
+                            <a href="#" class="btn btn-outline-danger delete_company" 
+                                        data-toggle="modal"
+                                        data-target="#deleteModal" 
+                                        data-delete-id="{{ $companies->id }}"
+                                        data-delete-name="{{ $companies->name }}"
+                                        data-delete-product="{{ $companies->product }}"
+                                        data-delete-country="{{ $companies->country }}"
+                                        data-delete-history="{{ $companies->history }}" 
+                                        data-delete-img="{{ $companies->img }}"                            
+                                        style="border: none;"><ion-icon name="trash-outline"></ion-icon></a>                                                        
                             <a href="#" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
                         </td>
                     </tr>
@@ -196,7 +220,11 @@
                         <div class="container" style="text-align: center;">
                             <h5>History</h5>
                             <input type="text" name="updateHistory" id="updateHistory">
-                        </div>                                                                                                          
+                        </div>  
+                        <div class="container" style="text-align: center;">
+                            <h5>Image</h5>
+                            <input type="file" name="updateImg" id="updateImg">
+                        </div>                                                                                                                                                        
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -207,6 +235,51 @@
         </div>
     </div>
     {{-- end Edit Modal --}}
+    {{-- Start Delete Modal --}}
+    <!-- Modal -->
+    <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Update Company Details</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                </div>
+                <form action="{{ route('deleteCompanyModalVer') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" value="..." name="ID" id="deleteID" >
+                    <div class="modal-body" >                                                
+                        <div class="container" style="text-align: center;">
+                            <h5>Company Name</h5>
+                            <input type="text" value="..." name="deleteName" id="deleteName">
+                        </div>
+                        <div class="container" style="text-align: center;">
+                            <h5>Product</h5>
+                            <input type="text" value="..." name="deleteProduct" id="deleteProduct">
+                        </div>
+                        <div class="container" value="..." style="text-align: center;">
+                            <h5>Country</h5>
+                            <input type="text" value="..." name="deleteCountry" id="deleteCountry">
+                        </div>
+                        <div class="container" style="text-align: center;">
+                            <h5>History</h5>
+                            <input type="text" value="..." name="deleteHistory" id="deleteHistory">
+                        </div>  
+                        <div class="container" style="text-align: center;">
+                            <h5>Image</h5>
+                            <input type="text" value="..." name="deleteImg" id="deleteImg">
+                        </div>                                                                                                                                 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save changes</button>
+                    </div> 
+                </form>                                             
+            </div>
+        </div>
+    </div>
+    {{-- end Delete Modal --}}    
     {{-- Bootstrap --}}    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -227,11 +300,29 @@
             }        
         </style>    
     <script>
+        //DELETE MODAL
+        $(".delete_company").click(function() { 
+            var company_id = $(this).attr('data-delete-id');
+            var company_name = $(this).attr('data-delete-name');
+            var company_product = $(this).attr('data-delete-product');
+            var company_country = $(this).attr('data-delete-country');
+            var company_history = $(this).attr('data-delete-history');
+            var company_img = $(this).attr('data-delete-img');            
+
+            document.getElementById("deleteID").value = company_id;
+            document.getElementById("deleteName").value = company_name;
+            document.getElementById("deleteProduct").value  = company_product;
+            document.getElementById("deleteCountry").value  = company_country;
+            document.getElementById("deleteHistory").value  = company_history;
+            document.getElementById("deleteImg").setAttribute('value', company_img);
+        });
+
         //EDIT MODAL
         $(".update_company").click(function() {
             var company_id = $(this).attr('data-edit-id');                      
             document.getElementById("companyID").value = company_id;
-        });        
+        });     
+
         //VIEW MODAL
         $(".company_view").click(function() { 
             var company_name = $(this).attr('data-view-name');
@@ -244,6 +335,8 @@
             document.getElementById("Ccountry").innerHTML  = company_country;
             document.getElementById("Chistory").innerHTML  = company_history;
         });
+
+        //TABLE DOM
         $(document).ready(function () {
             // Setup - add a text input to each footer cell
             $('#example tfoot th').each(function () {

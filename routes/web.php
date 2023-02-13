@@ -22,8 +22,10 @@ Auth::routes();
 //via modal
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/companyViaModal', [App\Http\Controllers\CompanyViaModalController::class, 'index'])->name('companyModalVer');
-Route::post('/companyViaModal/update', [App\Http\Controllers\CompanyViaModalController::class, 'update'])->name('updateCompanyModalVer');
 Route::post('/companyViaModal/store', [App\Http\Controllers\CompanyViaModalController::class, 'addNewCompany'])->name('addNewCompanyModalVer');
+Route::post('/companyViaModal/delete', [App\Http\Controllers\CompanyViaModalController::class, 'delete'])->name('deleteCompanyModalVer');
+Route::post('/companyViaModal/update', [App\Http\Controllers\CompanyViaModalController::class, 'update'])->name('updateCompanyModalVer');
+
 
 //via next page
 Route::get('/companyViaNextPage', [App\Http\Controllers\CompanyViaNextpageController::class, 'index'])->name('companyNextPageVer');
