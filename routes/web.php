@@ -27,6 +27,9 @@ Route::post('/companyViaModal/store', [App\Http\Controllers\CompanyViaModalContr
 
 //via next page
 Route::get('/companyViaNextPage', [App\Http\Controllers\CompanyViaNextpageController::class, 'index'])->name('companyNextPageVer');
-//view
+//add page
+Route::get('/companyViaNextPage/Page', [App\Http\Controllers\CompanyViaNextpageController::class, 'addPage'])->name('companyNextPageAddVer');
+Route::get('/companyViaNextPage/store', [App\Http\Controllers\CompanyViaNextpageController::class, 'store'])->name('companyNextPageAddFuncVer');
+//view page
 Route::get('/companyViaNextPage/ViewCompanyDetails/{id}', [App\Http\Controllers\CompanyViaNextpageController::class, 'view'])->name('companyNextPageViewVer');
 

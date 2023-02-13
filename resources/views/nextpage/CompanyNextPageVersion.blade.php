@@ -31,13 +31,28 @@
                  {{ __('Logout') }}
              </a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Separated link</a>
+            <a class="dropdown-item" href="{{ route('companyNextPageAddVer') }}">Add New Company</a>
             </div>
         </div>  
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
             @csrf
         </form>        
     </nav>
+    @if (Session::has('success'))
+        <div class="alert alert-success">
+            <span>{!! \Session::get('success') !!}</span>
+        </div>
+    @endif
+    @if (Session::has('warning'))
+        <div class="alert alert-warning">
+            <span>{!! \Session::get('warning') !!}</span>
+        </div>
+    @endif
+    @if (Session::has('missing'))
+        <div class="alert alert-danger">
+            <span>{!! \Session::get('missing') !!}</span>
+        </div>
+    @endif    
     <div style="padding-left: 200px; padding-right: 200px;">
         <table id="example" class="table table-striped table-bordered" style="width:100%;">
             <thead>
