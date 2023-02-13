@@ -71,7 +71,7 @@
                         <td>{{ $companies->country }}</td>
                         <td>
                             <a href="{{ route('companyNextPageViewVer',$companies->id) }}" class="btn btn-outline-info" style="border: none;"><ion-icon name="eye-outline"></ion-icon></a>
-                            <a href="#" class="btn btn-outline-primary" style="border: none;"><ion-icon name="settings-outline"></ion-icon></a>                            
+                            <a href="{{ route('companyNextPageEditVer',$companies->id) }}" class="btn btn-outline-primary" style="border: none;"><ion-icon name="settings-outline"></ion-icon></a>                            
                             <a href="#" class="btn btn-outline-danger" style="border: none;"><ion-icon name="trash-outline"></ion-icon></a>                                                        
                             <a href="#" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
                         </td>

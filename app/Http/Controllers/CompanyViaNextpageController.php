@@ -37,6 +37,7 @@ class CompanyViaNextpageController extends Controller
         //display return 
         return view('nextpage/view', compact('companyDetials'));
     }
+
     //-----add start
     public function addPage()  
     {
@@ -64,5 +65,52 @@ class CompanyViaNextpageController extends Controller
             return redirect()->route('companyNextPageAddVer');
         }
     }        
-    //-----end start
+    //-----add end
+
+    //-----update start
+    public function editPage($companyID)  
+    {
+        //check if company is existing, and if existing get data
+        $companyDetials = Company::where('id', $companyID)->first();
+        //display return 
+        return view('nextpage/edit', compact('companyDetials'));
+    } 
+    public function edit(Request $request)  
+    {
+        $updateID = Company::where('id', $request->input('companyID'))->first();
+        try
+        {
+            //find record data, based on fetch ID        
+            $updateID->name = $request->input('name');
+            $updateID->product = $request->input('product');
+            $updateID->country = $request->input('country');
+            $updateID->history = $request->input('history');
+            if($request->input('img') != null)
+            {
+                $updateID->img = $request->input('img'); 
+                //save changes
+                $updateID->save();
+            }         
+            else
+            {
+                //save changes
+                $updateID->save();
+            }      
+            //flash message
+            Session::flash('success', "Table has been updated.");            
+            //get company data
+            $company = Company::paginate();
+            //calling rss/views
+            return redirect()->route('companyNextPageVer')->with(compact('company'));
+        }
+        catch(Throwable $e)
+        {
+            //flash message
+            Session::flash('missing', "Update Unsuccessful. Due to missing information, Please fill-up all information. Thanks");            
+            //calling rss/views
+            //fix missing parameter add $request->input('companyID')
+            return redirect()->route('companyNextPageEditVer', $request->input('companyID'));
+        }        
+    }      
+    //-----update end
 }
