@@ -19,7 +19,8 @@
                         {{ __('You are logged in!') }}
                     </div>
                     <div class="text-right" style="display: inline-block; margin: 0 auto; float:right;">
-                        <h3><a href="{{ route('companyModalVer') }}">View All Companies(By Modal)</a></h3>                        
+                        <h3><a href="{{ route('companyModalVer') }}">View All Companies(Via Modal)</a></h3>                        
+                        <h3><a href="{{ route('companyNextPageVer')}}">View All Companies(Via NextPage)</a></h3>                        
                     </div>
                     
                 </div>

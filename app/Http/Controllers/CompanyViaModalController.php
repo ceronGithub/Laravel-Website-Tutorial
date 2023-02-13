@@ -24,6 +24,7 @@ class CompanyViaModalController extends Controller
     public function index()
     {
         $company = Company::paginate(5);
+        //calling rss/views
         return view('CompanyModalVersion', compact('company'));
     } 
     //Add new record
