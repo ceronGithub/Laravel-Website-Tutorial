@@ -217,6 +217,14 @@
                         <div class="container" style="text-align: center;">
                             <h5>Company Name</h5>
                             <input type="text" name="updateName" id="updateName">
+                        </div>                        
+                        <div class="container" style="text-align: center;">
+                            <h5>Country</h5>
+                            <input type="text" name="updateCountry" id="updateCountry">
+                        </div>
+                        <div class="container" style="text-align: center;">
+                            <h5>History</h5>
+                            <input type="text" name="updateHistory" id="updateHistory">
                         </div>
                         <div class="container" style="text-align: center;">
                             <h5>Product</h5>
@@ -230,15 +238,7 @@
                                 <option value="Rabbit">Rabbit</option>
                                 <option value="Crocodile">Crocodile</option>
                             </select>                                                        
-                        </div>
-                        <div class="container" style="text-align: center;">
-                            <h5>Country</h5>
-                            <input type="text" name="updateCountry" id="updateCountry">
-                        </div>
-                        <div class="container" style="text-align: center;">
-                            <h5>History</h5>
-                            <input type="text" name="updateHistory" id="updateHistory">
-                        </div>  
+                        </div>                          
                         <div class="container" style="text-align: center;">
                             <h5>Image</h5>
                             <input type="file" name="updateImg" id="updateImg">

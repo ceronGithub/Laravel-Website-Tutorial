@@ -52,16 +52,25 @@ class CompanyViaModalController extends Controller
     //--------- addNewCompany end
     //--------- update start
     public function update(Request $request)
-    {
+    {   
+    
         try
-        {
+        {   
+                
+            /*  
+                $updateID = Company::where('id', $request->input('ID'))->first();
+                $updateID->fill($request->input())->save();  
+                //flash message
+                Session::flash('success', "Table has been Updated. Update successful.");              
+            */  
+                          
             //find record data, based on fetch ID
             $updateID = Company::where('id', $request->input('ID'))->first();
             //apply changes
-            $updateID->name = $request->input('updateName');
-            $updateID->product = $request->input('updateProduct');
+            $updateID->name = $request->input('updateName');            
             $updateID->country = $request->input('updateCountry');
             $updateID->history = $request->input('updateHistory');
+            $updateID->product = $request->input('updateProduct');
             if($request->input('updateImg') != null)
             {
                 $updateID->img = $request->input('updateImg');
@@ -76,7 +85,7 @@ class CompanyViaModalController extends Controller
             //flash message
             Session::flash('success', "Table has been Updated. Update successful.");        
             //get company data
-            $company = Company::paginate();
+            $company = Company::paginate();            
             //display return
             //return view('companyModalVer', compact('company'));        
             return redirect()->route('companyModalVer');
