@@ -17,7 +17,7 @@ class RoleTableSeeder extends Seeder
     {
         //
         role::create(['name' => 'Developer',
-                'description' => '...']);
+                'description' => 'Have Access all throughout website.']);
 
         role::create(['name' => 'Admin',
                 'description' => 'Company Owner']);  
