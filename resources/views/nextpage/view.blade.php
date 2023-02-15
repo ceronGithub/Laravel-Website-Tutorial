@@ -30,6 +30,18 @@
             @csrf
         </form>        
     </nav>
+    <div>
+        <div style="text-align: center; padding-top: 150px;">
+            <label for="">Company Name:</label>
+            <p>{{ $companyDetials->name }}</p>
+            <label for="">Product:</label>
+            <p>{{ $companyDetials->product }}</p>
+            <label for="">Country:</label>
+            <p>{{ $companyDetials->country }}</p>
+            <label for="">History:</label>
+            <p>{{ $companyDetials->history }}</p>
+        </div>
+    </div>
     {{-- Bootstrap --}}    
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
