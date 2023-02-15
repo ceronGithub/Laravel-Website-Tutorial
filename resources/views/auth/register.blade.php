@@ -63,14 +63,15 @@
 
 
                         <div class="row mb-3">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
+                            <label for="role_id" class="col-md-4 col-form-label text-md-end">{{ __('Role') }}</label>
 
-                            <div class="col-md-6">
-                                <select class="form-select" aria-label="Default select example">
+                            <div class="col-md-6">                                
+                                {{----}}
+                                <select class="form-control" name="role_id"  aria-label="Default select example" >
                                     <option selected>Open this select menu</option>
-                                    <option value="2">Admin</option>
-                                    <option value="3">Customer</option>                                    
-                                </select>
+                                    <option value='2'>Admin</option>
+                                    <option value='3'>Customer</option>                                    
+                                </select>                                
                             </div>
                         </div>                        
 
