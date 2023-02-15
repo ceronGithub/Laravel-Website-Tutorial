@@ -52,12 +52,8 @@
             <label for="">Company Name</label>  
             <p><input type="text" name="name" value="{{$companyDetials->name}}" placeholder="Input Company Name"></p>   
             <p>
-                <select class="form-select" name="product"  value="{{$companyDetials->product}}" aria-label="Default select example">
-                    <option selected>Select Product</option>
-                    <option value="Pig">Pig</option>
-                    <option value="Cow">Cow</option>
-                    <option value="Duck">Duck</option>
-                    <option value="Chicken">Chicken</option>
+                <select class="form-select" name="product" aria-label="Default select example">
+                    <option selected>{{$companyDetials->product}}</option>
                 </select> 
             </p>                              
             <label for="">Country</label>  
