@@ -132,7 +132,16 @@
                         </div>
                         <div class="container" style="text-align: center;">
                             <h5>Product</h5>
-                            <input type="text" name="product">
+                            <select class="form-select" name="product" aria-label="Default select example">
+                                <option selected>Select Product</option>
+                                <option value="Pig">Pig</option>
+                                <option value="Cow">Cow</option>
+                                <option value="Duck">Duck</option>
+                                <option value="Chicken">Chicken</option>
+                                <option value="Fish">Fish</option>
+                                <option value="Rabbit">Rabbit</option>
+                                <option value="Crocodile">Crocodile</option>
+                            </select>
                         </div>
                         <div class="container" style="text-align: center;">
                             <h5>Country</h5>
@@ -211,7 +220,16 @@
                         </div>
                         <div class="container" style="text-align: center;">
                             <h5>Product</h5>
-                            <input type="text" name="updateProduct" id="updateProduct">
+                            <select class="form-select" name="updateProduct" id="updateProduct" aria-label="Default select example">
+                                <option selected>Select Product</option>
+                                <option value="Pig">Pig</option>
+                                <option value="Cow">Cow</option>
+                                <option value="Duck">Duck</option>
+                                <option value="Chicken">Chicken</option>
+                                <option value="Fish">Fish</option>
+                                <option value="Rabbit">Rabbit</option>
+                                <option value="Crocodile">Crocodile</option>
+                            </select>                                                        
                         </div>
                         <div class="container" style="text-align: center;">
                             <h5>Country</h5>

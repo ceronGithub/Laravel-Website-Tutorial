@@ -57,6 +57,9 @@
                     <option value="Cow">Cow</option>
                     <option value="Duck">Duck</option>
                     <option value="Chicken">Chicken</option>
+                    <option value="Fish">Fish</option>
+                    <option value="Rabbit">Rabbit</option>
+                    <option value="Crocodile">Crocodile</option>
                 </select> 
             </p>                              
             <label for="">Country</label>  
