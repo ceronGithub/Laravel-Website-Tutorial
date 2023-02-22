@@ -48,3 +48,4 @@ Route::get('/companyViaNextPage/deleteFunc', [App\Http\Controllers\nextpage\Comp
 
 //chicken
 Route::get('/chickenPage', [App\Http\Controllers\chicken\ChickenController::class, 'index'])->name('chicken.index');
+Route::get('/cowPage', [App\Http\Controllers\cow\CowController::class, 'index'])->name('cow.index');
