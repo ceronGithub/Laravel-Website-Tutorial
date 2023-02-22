@@ -113,4 +113,15 @@ class CompanyViaModalController extends Controller
         return redirect()->route('companyModalVer');
     }     
     //--------- delete end
+    //--------- show start
+    public function show($id)
+    {        
+        $checkProduct = Company::where('id', $id)->first(['product'])->product;
+        if($checkProduct == 'chicken')
+        {
+            return view('chicken.index');
+        }
+
+    }
+    //--------- show end
 }

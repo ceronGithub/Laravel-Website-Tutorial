@@ -53,6 +53,7 @@
         <table id="example" class="table table-striped table-bordered" style="width:100%;">
             <thead>
                 <tr>
+                    <th>#</th>
                     <th>Name</th>
                     <th>Product</th>
                     <th>Country</th>                    
@@ -61,7 +62,8 @@
             </thead>
             <tbody>
                 @foreach ($company as $companies)
-                    <tr>                        
+                    <tr>         
+                        <td>{{ $companies->id }}</td>               
                         <td>{{ $companies->name }}</td>
                         <td>{{ $companies->product }}</td>
                         <td>{{ $companies->country }}</td>                        
@@ -93,7 +95,7 @@
                                         data-delete-history="{{ $companies->history }}" 
                                         data-delete-img="{{ $companies->img }}"                            
                                         style="border: none;"><ion-icon name="trash-outline"></ion-icon></a>                                                        
-                            <a href="#" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
+                            <a href="{{ route('showCompanyModalVer', $companies->id) }}" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
                         </td>
                     </tr>
                 @endforeach
