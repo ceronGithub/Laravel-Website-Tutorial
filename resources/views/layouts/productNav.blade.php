@@ -23,9 +23,9 @@
                  {{ __('Logout') }}
              </a>
             <div class="dropdown-divider"></div>
-            <a href="#" class="dropdown-item"                                         
+            <a href="#" class="dropdown-item" id="ViewCart"                                        
                         data-toggle="modal" 
-                        data-target="#addModal">Add Company
+                        data-target="#CartModal">View Cart
                         <ion-icon name="add-circle-outline"></ion-icon>
             </a>
             </div>
