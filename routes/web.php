@@ -27,7 +27,6 @@ Route::post('/companyViaModal/delete', [App\Http\Controllers\modal\CompanyViaMod
 Route::post('/companyViaModal/update', [App\Http\Controllers\modal\CompanyViaModalController::class, 'update'])->name('updateCompanyModalVer');
 Route::get('/companyViaModal/companyViaModal*ProductCategory={id}', [App\Http\Controllers\modal\CompanyViaModalController::class, 'show'])->name('showCompanyModalVer');
 
-
 //via next page
 Route::get('/companyViaNextPage', [App\Http\Controllers\nextpage\CompanyViaNextpageController::class, 'index'])->name('companyNextPageVer');
 //----------- add start
