@@ -1,1 +1,5 @@
-<h1>Duck</h1>
+@extends('layouts.productNav')
+
+@section('content')
+    <h1>Duck</h1>            
+@endsection

@@ -25,7 +25,7 @@ Route::get('/companyViaModal', [App\Http\Controllers\modal\CompanyViaModalContro
 Route::post('/companyViaModal/store', [App\Http\Controllers\modal\CompanyViaModalController::class, 'addNewCompany'])->name('addNewCompanyModalVer');
 Route::post('/companyViaModal/delete', [App\Http\Controllers\modal\CompanyViaModalController::class, 'delete'])->name('deleteCompanyModalVer');
 Route::post('/companyViaModal/update', [App\Http\Controllers\modal\CompanyViaModalController::class, 'update'])->name('updateCompanyModalVer');
-Route::get('/companyViaModal/{id}', [App\Http\Controllers\modal\CompanyViaModalController::class, 'show'])->name('showCompanyModalVer');
+Route::get('/companyViaModal/companyViaModal*ProductCategory={id}', [App\Http\Controllers\modal\CompanyViaModalController::class, 'show'])->name('showCompanyModalVer');
 
 
 //via next page
