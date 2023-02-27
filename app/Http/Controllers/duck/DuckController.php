@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\DuckController;
+namespace App\Http\Controllers\duck;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

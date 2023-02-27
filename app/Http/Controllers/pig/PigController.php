@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\PigController;
+namespace App\Http\Controllers\pig;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

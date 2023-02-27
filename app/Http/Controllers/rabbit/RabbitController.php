@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\RabbitController;
+namespace App\Http\Controllers\rabbit;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

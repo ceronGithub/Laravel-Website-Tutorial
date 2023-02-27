@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\FishController;
+namespace App\Http\Controllers\fish;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;

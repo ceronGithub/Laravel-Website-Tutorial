@@ -46,6 +46,7 @@ Route::get('/companyViaNextPage/DeletePage/{id}', [App\Http\Controllers\nextpage
 Route::get('/companyViaNextPage/deleteFunc', [App\Http\Controllers\nextpage\CompanyViaNextpageController::class, 'delete'])->name('companyNextPageDeleteFuncVer');
 //----------- delete end
 
-//chicken
-Route::get('/chickenPage', [App\Http\Controllers\chicken\ChickenController::class, 'index'])->name('chicken.index');
-Route::get('/cowPage', [App\Http\Controllers\cow\CowController::class, 'index'])->name('cow.index');
+//product pages 
+Route::get('/ChickenPage', [App\Http\Controllers\chicken\ChickenController::class, 'index'])->name('Chicken.index');
+
+

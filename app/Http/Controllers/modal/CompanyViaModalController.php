@@ -116,12 +116,34 @@ class CompanyViaModalController extends Controller
     //--------- show start
     public function show($id)
     {        
-        $checkProduct = Company::where('id', $id)->first(['product'])->product;
-        if($checkProduct == 'chicken')
+        $checkProduct = Company::where('id', $id)->first(['product'])->product;        
+        switch($checkProduct)
         {
-            return view('chicken.index');
-        }
+            case "Pig":
+                return view('Pig.Pigindex');
+                break;
+            case "Cow":
+                return view('Cow.Cowindex');
+                break;
+            case "Duck":
+                return view('Duck.Duckindex');
+                break;    
+            case "Chicken":
+                return view('Chicken.index');
+                break;   
+            case "Fish":                
+                return view('Fish.Fishindex');
+                break; 
+            case "Rabbit":
+                return view('Rabbit.Rabbitindex');
+                break; 
+            case "Crocodile":
+                return view('Crocodile.Crocodileindex');
+                break;
 
+            default:
+                return view('companyModalVer');
+        }
     }
     //--------- show end
 }
