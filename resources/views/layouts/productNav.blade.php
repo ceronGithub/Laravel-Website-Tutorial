@@ -26,8 +26,13 @@
             <a href="#" class="dropdown-item" id="ViewCart"                                        
                         data-toggle="modal" 
                         data-target="#CartModal">View Cart
-                        <ion-icon name="add-circle-outline"></ion-icon>
+                        <ion-icon name="eye-outline"></ion-icon>
             </a>
+            <a href="#" class="dropdown-item" id="ViewCart"                                        
+                        data-toggle="modal" 
+                        data-target="#AddItemModal">Add Item                        
+                        <ion-icon name="add-circle-outline"></ion-icon>
+            </a>            
             </div>
         </div>  
         <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">

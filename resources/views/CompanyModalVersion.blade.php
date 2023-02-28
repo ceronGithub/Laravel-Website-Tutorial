@@ -95,7 +95,7 @@
                                         data-delete-history="{{ $companies->history }}" 
                                         data-delete-img="{{ $companies->img }}"                            
                                         style="border: none;"><ion-icon name="trash-outline"></ion-icon></a>                                                        
-                            <a href="{{ route('showCompanyModalVer', $companies->id) }}" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
+                            <a href="{{ route('showCompanyModalVer', ["ID" => $companies->id, "product" => $companies->product]) }}" class="btn btn-outline-success" style="border: none;"><ion-icon name="arrow-forward-circle-outline"></ion-icon></a>                                                        
                         </td>
                     </tr>
                 @endforeach

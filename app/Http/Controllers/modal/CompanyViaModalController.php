@@ -7,6 +7,7 @@ use App\Models\Company;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use App\Http\Controllers\Controller;
+use App\Models\Product;
 
 class CompanyViaModalController extends Controller
 {
@@ -114,31 +115,32 @@ class CompanyViaModalController extends Controller
     }     
     //--------- delete end
     //--------- show start
-    public function show($id)
-    {        
-        $checkProduct = Company::where('id', $id)->first(['product'])->product;        
-        switch($checkProduct)
+    public function show($ID,$product)
+    {                       
+        $products = Product::where('company_id', $ID)->get();        
+        $companyData = Company::where('id', $ID)->first();
+        switch($product)
         {
-            case "Pig":
-                return view('Pig.Pigindex');
+            case "Pig":            
+                return view('Pig.Pigindex', compact('products', 'companyData'));
                 break;
             case "Cow":
-                return view('Cow.Cowindex');
+                return view('Cow.Cowindex', compact('products', 'companyData'));
                 break;
             case "Duck":
-                return view('Duck.Duckindex');
+                return view('Duck.Duckindex', compact('products', 'companyData'));
                 break;    
             case "Chicken":
-                return view('Chicken.index');
+                return view('Chicken.index', compact('products', 'companyData'));
                 break;   
             case "Fish":                
-                return view('Fish.Fishindex');
+                return view('Fish.Fishindex', compact('products', 'companyData'));
                 break; 
             case "Rabbit":
-                return view('Rabbit.Rabbitindex');
+                return view('Rabbit.Rabbitindex', compact('products', 'companyData'));
                 break; 
             case "Crocodile":
-                return view('Crocodile.Crocodileindex');
+                return view('Crocodile.Crocodileindex', compact('products', 'companyData'));
                 break;
 
             default:

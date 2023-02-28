@@ -25,7 +25,7 @@ Route::get('/companyViaModal', [App\Http\Controllers\modal\CompanyViaModalContro
 Route::post('/companyViaModal/store', [App\Http\Controllers\modal\CompanyViaModalController::class, 'addNewCompany'])->name('addNewCompanyModalVer');
 Route::post('/companyViaModal/delete', [App\Http\Controllers\modal\CompanyViaModalController::class, 'delete'])->name('deleteCompanyModalVer');
 Route::post('/companyViaModal/update', [App\Http\Controllers\modal\CompanyViaModalController::class, 'update'])->name('updateCompanyModalVer');
-Route::get('/companyViaModal/companyViaModal*ProductCategory={id}', [App\Http\Controllers\modal\CompanyViaModalController::class, 'show'])->name('showCompanyModalVer');
+Route::get('/companyViaModal/companyId={ID}ProductCategory={product}', [App\Http\Controllers\modal\CompanyViaModalController::class, 'show'])->name('showCompanyModalVer');
 
 //via next page
 Route::get('/companyViaNextPage', [App\Http\Controllers\nextpage\CompanyViaNextpageController::class, 'index'])->name('companyNextPageVer');
@@ -46,6 +46,6 @@ Route::get('/companyViaNextPage/deleteFunc', [App\Http\Controllers\nextpage\Comp
 //----------- delete end
 
 //product pages 
-Route::get('/ChickenPage', [App\Http\Controllers\chicken\ChickenController::class, 'index'])->name('Chicken.index');
+Route::get('/fishPage/create/', [App\Http\Controllers\chicken\ChickenController::class, 'index'])->name('Chicken.index');
 
 
