@@ -66,7 +66,7 @@
                             <ul class="b" style="list-style: none; text-align: center;">
                                 <li style="margin-bottom: 10px;"><input type="text" name="product_name" id="product_name"></li>
                                 <li style="margin-bottom: 10px;"><input type="number" name="product_price" id="product_price"></li>
-                                <li style="margin-bottom: 10px;"><input type="file" name="product_image"></li>
+                                <li style="margin-bottom: 10px;"><input multiple type="file" name="product_image[]"></li>
                                 <li style="margin-bottom: 10px;"><input type="text" id="company_id" name="company_id" value="{{ $companyData->id }}"></li>
                             </ul>                        
                         </div>  

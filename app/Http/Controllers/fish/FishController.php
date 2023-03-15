@@ -18,11 +18,14 @@ class FishController extends Controller
     }
     public function create(Request $request)
     {
+        //dd($request);
         $companyId = $request->input('company_id');
-        Product::create($request->all());
+        $product_name = $request->input('product_name');
+        $product_price = $request->input('product_price');
+        
+        //Product::create($request->all());
         $products = Product::where('company_id', $companyId)->get();
         $companyData = Company::where('id', $companyId)->first();
-        //dd($companyData);
         //returns to fish page, but everytime the page is refreshed. the last data created, will duplicate.
         //return view('Fish.Fishindex', compact('products', 'companyData')); 
         //return back to previous page
