@@ -38,8 +38,6 @@ class FishController extends Controller
         $this->newProduct($companyId, $product_name, $product_price, $imagePath);
         $products = Product::where('company_id', $companyId)->get();
         $companyData = Company::where('id', $companyId)->first();
-
-
         //returns to fish page, but everytime the page is refreshed. the last data created, will duplicate.
         //return view('Fish.Fishindex', compact('products', 'companyData')); 
         //return back to previous page

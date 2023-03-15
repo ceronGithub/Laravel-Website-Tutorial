@@ -9,7 +9,14 @@
         @foreach ($products as $item)
         <div class="col-sm-2">
             <div class="card" style="width: 18rem; margin-left: 10px; margin-bottom:10px;">
-                <img class="card-img-top" src="{{ asset($item->image[1] ?? '') }}" alt="image"><br>
+                {{--
+                    <img src="{{ asset($item->product_image[0] ?? '') }}" alt="image">
+                --}}
+                    @foreach (json_decode($item->product_image) as $image)
+                        <label for="">
+                            <img src="{{ asset($image) }}">
+                        </label>
+                    @endforeach
                 <div class="card-body">
                 <h5 class="card-title">Product Name:</h5>
                 <p class="card-text">{{$item->product_name}}.</p>

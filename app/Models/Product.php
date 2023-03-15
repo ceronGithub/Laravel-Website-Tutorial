@@ -9,4 +9,9 @@ class Product extends Model
 {
     protected $fillable = ['company_id', 'product_name', 'product_price', 'product_image'];
     use HasFactory;
+
+    public function getImageAttribute($value)
+    {
+        return json_decode($value);
+    }
 }

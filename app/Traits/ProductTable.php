@@ -24,6 +24,6 @@ trait ProductTable {
         $imageName = $pName.$pLoopName.'.' . $extension;
         //save image to local folder. project/app/public
         $image->move(public_path('storage/uploads/products/'), $imageName);
-        return '"storage\/uploads\/products\/'.$imageName.'"';
+        return '"storage/uploads/products/'.$imageName.'"';
     }
 }
