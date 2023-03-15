@@ -15,7 +15,7 @@
                     @foreach (json_decode($item->product_image) as $index => $image)
                     @if ($index == 0)
                         <label for=""> 
-                            <img src="{{ asset($image) }}">
+                            <img src="{{ asset($image) }}" style="display:block;margin:auto; width: 200px; height: 200px; background-size: cover;">
                         </label>
                     @endif
                     @endforeach
