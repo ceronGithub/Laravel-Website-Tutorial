@@ -12,10 +12,12 @@
                 {{--
                     <img src="{{ asset($item->product_image[0] ?? '') }}" alt="image">
                 --}}
-                    @foreach (json_decode($item->product_image) as $image)
-                        <label for="">
+                    @foreach (json_decode($item->product_image) as $index => $image)
+                    @if ($index == 0)
+                        <label for=""> 
                             <img src="{{ asset($image) }}">
                         </label>
+                    @endif
                     @endforeach
                 <div class="card-body">
                 <h5 class="card-title">Product Name:</h5>
