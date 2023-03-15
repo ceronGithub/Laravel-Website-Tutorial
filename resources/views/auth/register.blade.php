@@ -69,6 +69,7 @@
                                 {{----}}
                                 <select class="form-control" name="role_id"  aria-label="Default select example" >
                                     <option selected>Open this select menu</option>
+                                    <option value='1'>Developer</option>
                                     <option value='2'>Admin</option>
                                     <option value='3'>Customer</option>                                    
                                 </select>                                

@@ -11,8 +11,8 @@
             <div class="card" style="width: 18rem; margin-left: 10px; margin-bottom:10px;">
                 <img class="card-img-top" src="{{ $item->product_image }}" alt="Card image cap">
                 <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                <h5 class="card-title">Product Name:</h5>
+                <p class="card-text">{{$item->product_name}}.</p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
                 </div>
             </div>
@@ -43,7 +43,7 @@
     {{-- End Add Modal --}} 
     {{-- Start AddItemModal --}}
     <div class="modal fade" id="AddItemModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog" role="document" style="max-width: 40%;">
             <div class="modal-content">
                 <div class="modal-header">
                 <h5 class="modal-title" id="exampleModalLabel">Add Product</h5>
@@ -51,26 +51,26 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>
-                <form action="#" method="post" enctype="multipart/form-data">
+                <form action="{{ route('fish.create') }}" method="post" enctype="multipart/form-data">
                     @csrf       
                     <div class="modal-body">
-                        <div style="float: left; display: inline-block; padding-left: 0px;">
+                        <div style="float: left; display: inline-block;">
                             <ul class="a" style="list-style: none; text-align:center;">
-                                <li>Company Name</li>
-                                <li>Product</li>
-                                <li>Country</li>
-                                <li>History</li>
+                                <li style="margin-bottom: 15px;">Product Name</li>
+                                <li style="margin-bottom: 15px;">Product Price</li>
+                                <li style="margin-bottom: 15px;">Product Image</li>
+                                <li style="margin-bottom: 15px;">Company</li>
                             </ul>                        
                         </div>
-                        <div style="float: right; display: inline-block; padding-right:30px;">
-                            <ul class="b" style="list-style: none;text-align:center;">
-                                <li id="Cname">...</li>
-                                <li id="Cproduct">...</li>
-                                <li id="Ccountry">...</li>
-                                <li id="Chistory">...</li>
+                        <div style="float: right; display: inline-block;">
+                            <ul class="b" style="list-style: none; text-align: center;">
+                                <li style="margin-bottom: 10px;"><input type="text" name="product_name" id="product_name"></li>
+                                <li style="margin-bottom: 10px;"><input type="number" name="product_price" id="product_price"></li>
+                                <li style="margin-bottom: 10px;"><input type="file" name="product_image"></li>
+                                <li style="margin-bottom: 10px;"><input type="text" id="company_id" name="company_id" value="{{ $companyData->id }}"></li>
                             </ul>                        
                         </div>  
-                    </div>                                                                                                           
+                    </div>      
                     <div class="modal-footer" style="positon:fixed; bottom:0; width: 100%;">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         <button type="submit" class="btn btn-primary">Insert New Record</button>

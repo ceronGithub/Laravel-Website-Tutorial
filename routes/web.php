@@ -46,6 +46,8 @@ Route::get('/companyViaNextPage/deleteFunc', [App\Http\Controllers\nextpage\Comp
 //----------- delete end
 
 //product pages 
-Route::get('/fishPage/create/', [App\Http\Controllers\chicken\ChickenController::class, 'index'])->name('Chicken.index');
-
+//--------------------------- FISH ---------------------------------------------------
+Route::get('/fishPage', [App\Http\Controllers\fish\FishController::class, 'index'])->name('fish/index');
+Route::post('/fishPage/create/', [App\Http\Controllers\fish\FishController::class, 'create'])->name('fish.create');
+//--------------------------- END FISH ---------------------------------------------------
 
