@@ -8,12 +8,11 @@
     <h1>Fish</h1>   
     <div class="row" style="width: 100%"> 
         @foreach ($products as $item)
-        <div class="col-sm-2.5">
+        <div class="col-sm-3">
             <a class="product__information" 
-            href="{{ url('#')}}" 
             data-toggle="modal" 
             data-target="#ViewModal">
-                <div class="card" style="width: 18rem; margin-left: 10px; margin-bottom:10px;">
+                <div class="card" style="width: 18rem; margin-left: 4rem; margin-bottom:25px;">
                     {{--
                         <img src="{{ asset($item->product_image[0] ?? '') }}" alt="image">
                     --}}
